@@ -16,12 +16,12 @@ public class Circles extends JPanel{
         clickMe.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                add(new CirclesPanel());
-                setIgnoreRepaint(false);
-                repaint();
+                Graphics page = frame.getGraphics();
+                paintComponent(page);
+                page.setColor(Color.blue);
+                page.fillOval(100, 100, 300, 300);
             }
         });
-
 
         add(clickMe, BorderLayout.SOUTH);
         setPreferredSize(new Dimension(500,500));
@@ -31,9 +31,7 @@ public class Circles extends JPanel{
     public static void main (String[] args)
     {
         frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
-
         frame.getContentPane().add(new Circles());
-
         frame.pack();
         frame.setVisible(true);
     }

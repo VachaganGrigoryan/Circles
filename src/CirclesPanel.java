@@ -12,9 +12,7 @@ public class CirclesPanel extends JPanel
     }
 
     public void paintComponent(Graphics page) {
-
         super.paintComponent (page);
-
         page.setColor(Color.blue);
         page.fillOval(100, 100, 300, 300);
         repaint();
